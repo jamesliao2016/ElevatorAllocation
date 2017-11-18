@@ -51,14 +51,14 @@ def printApprox(building):
   for i in range(len(building)):
       str += '%06.3f  ' % building[i]
   str += ']'
-  print str
+  print (str)
 
 
 # Prints the circuit(s) for each of the elevators
 def printeleLoop(e):
-    print ''
-    print e
-    print ''
+    print ('')
+    print (e)
+    print ('')
     for i in range(1, len(e)):
         floorsServiced = e[i] - e[i-1] + 1
         curr = timePerFloor * e[i] * 2
@@ -67,8 +67,8 @@ def printeleLoop(e):
         str = 'Elevator #%d, time for loop %d seconds, ' % (i, curr)
         str += 'carrying an average of '
         str += '%3.2f people per carry' % avgCarry
-        print str
-    print ''
+        print (str)
+    print ('')
     
 # Allocate elevators
 # Elevator[] represents the starting
@@ -90,7 +90,7 @@ def simulate(e, building):
     for floor in range(len(building)):
       str += 'floor%2d ' % (floor + 1)
     str += ']'
-    print str
+    print (str)
 
     eCircuit = []
     for i in range(len(e)):
@@ -114,13 +114,13 @@ def simulate(e, building):
                     emptyFloors += 1
                     finalFloor = j
         printApprox(building)
-    print ''
+    print ('')
 
     # Find the final elevator on circuit, prints time
     for i in range(len(e)):
         if e[i] > finalFloor:
             iteration = eCircuit[i] * iteration / 60
-    print 'Total Time: %d minutes\n' % (iteration)
+    print ('Total Time: %d minutes\n' % (iteration))
 
 
 
