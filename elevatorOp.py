@@ -27,7 +27,7 @@ def eleLoop(e, i):
     floorsServiced = e[i] - e[i-1] + 1
     cirTime = timePerFloor * e[i] * 2
     cirTime += timePerWait * floorsServiced
-    avgCarry = cirTime * peoplePerFloor / rushHour * floorsServiced
+    avgCarry = (cirTime * peoplePerFloor * floorsServiced) / rushHour
     return cirTime, avgCarry
 
 # (Index * 5 seconds) + (20 seconds * (Index - PrevIndex))
